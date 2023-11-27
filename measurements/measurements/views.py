@@ -35,7 +35,7 @@ def MeasurementCreate(request):
         data_json = json.loads(data)
         if check_variable(data_json) == False:
             return HttpResponse("variable incorrecta")
-        if check_place(data_json) == False:
+        elif check_place(data_json) == False:
             return HttpResponse("place incorrecta")
         elif check_variable(data_json) == True and check_place(data_json) == True:
             measurement = Measurement()
